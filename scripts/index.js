@@ -1,3 +1,0 @@
-require('./bot');
-require('./web');
-
