@@ -5,6 +5,8 @@ const TelegramBot = require('node-telegram-bot-api');
 const { url } = require('inspector');
 require('dotenv').config();
 
+const env = process.env.NODE_ENV || 'development';
+
 
 // Your screet API keys.
 const YOUTUBEKEY = env.process.YOUTUBE_KEY;
