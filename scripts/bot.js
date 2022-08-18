@@ -27,12 +27,13 @@ bot.on('polling_error', (error) => {
 });
 
 
-// this way we can assign bot command
+// we can assign to bot command
 bot.onText(/\/start/, (msg) => {
   bot.sendMessage(msg.chat.id, "Hi there! " + msg.from.first_name);
 });
 
 const pullData = async () => {
+  // change here which channel you want to use.
   const channelId = 'UU7eKF0lPY8LNwfczq9UFlxg';
   try {
     //Youtube 
