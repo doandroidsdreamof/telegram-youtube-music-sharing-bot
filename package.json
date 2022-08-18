@@ -2,7 +2,7 @@
   "name": "telegram-bot",
   "version": "1.0.0",
   "description": "Telegram bot with Youtube data API",
-  "main": "bot.js",
+  "main": "web.js",
   "scripts": {
     "test": "test",
     "start": "node scripts/web.js"
@@ -21,8 +21,6 @@
   },
   "keywords": [
     "heroku"
-  ],
-  "devDependencies": {
-    "concurrently": "^7.3.0"
-  }
+  ]
+
 }
