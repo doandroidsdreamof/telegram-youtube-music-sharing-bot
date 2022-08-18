@@ -18,7 +18,7 @@ const bot = new TelegramBot(BOTKEY, { polling: true });
 
 
 bot.on('message', (msg) => {
-  /* for test in this way we can check message input from users.
+  /*
     const chatId = msg.chat.id;
     const message = msg.text.trim().toLowerCase();
     console.log("here =>", JSON.stringify(msg))*/
