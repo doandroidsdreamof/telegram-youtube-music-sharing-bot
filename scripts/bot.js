@@ -6,8 +6,10 @@ const { url } = require('inspector');
 require('dotenv').config();
 
 // Your screet API keys.
-const YOUTUBE_KEY = 'AIzaSyCmrWhv4bz_jJPeoM_Cec_gq77D6z5fZ8c';
-const BOT_KEY = '5338914098:AAFskVd_pnMN1cpMvfKX78MoZ9ZCaFvXpJY';
+const YOUTUBE_KEY = env.process.YOUTUBEKEY;
+const BOT_KEY = env.process.BOTKEY;
+console.log("=======================>",BOT_KEY)
+console.log("=======================>",YOUTUBE_KEY)
 
 const bot = new TelegramBot(BOT_KEY, { polling: true });
 
