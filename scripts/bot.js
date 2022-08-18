@@ -9,8 +9,8 @@ const env = process.env.NODE_ENV || 'development';
 
 
 // Your screet API keys.
-const YOUTUBEKEY = 'AIzaSyCmrWhv4bz_jJPeoM_Cec_gq77D6z5fZ8c';
-const BOTKEY = '5338914098:AAFskVd_pnMN1cpMvfKX78MoZ9ZCaFvXpJY';
+const YOUTUBEKEY = proces.env.YOUTUBE_KEY;
+const BOTKEY = proces.env.BOT_KEY;
 
 
 const bot = new TelegramBot(BOTKEY, { polling: true });
