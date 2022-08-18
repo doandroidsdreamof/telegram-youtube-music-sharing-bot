@@ -6,8 +6,8 @@ const { url } = require('inspector');
 require('dotenv').config();
 
 // Your screet API keys.
-const YOUTUBE_KEY = env.process.YOUTUBEKEY;
-const BOT_KEY = env.process.BOTKEY;
+const YOUTUBEKEY = env.process.YOUTUBE_KEY;
+const BOTKEY = env.process.BOT_KEY;
 console.log("=======================>",BOT_KEY)
 console.log("=======================>",YOUTUBE_KEY)
 
