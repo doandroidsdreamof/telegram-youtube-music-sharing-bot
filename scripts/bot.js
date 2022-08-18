@@ -6,7 +6,6 @@ const { url } = require('inspector');
 require('dotenv').config();
 const express = require("express");
 
-const aws = require('aws-sdk');
 
 
 
@@ -14,10 +13,10 @@ const env = process.env.NODE_ENV || 'development';
 
 
 // Your screet API keys.
-const YOUTUBEKEY = proces.env.YOUTUBE_KEY;
-const BOTKEY = proces.env.BOT_KEY;
+const YOUTUBEKEY = process.env.YOUTUBE_KEY;
+const BOTKEY = process.env.BOT_KEY;
 
-
+console.log(YOUTUBEKEY)
 const bot = new TelegramBot(BOTKEY, { polling: true });
 
 
