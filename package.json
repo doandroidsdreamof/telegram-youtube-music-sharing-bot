@@ -5,7 +5,7 @@
   "main": "bot.js",
   "scripts": {
     "test": "test",
-    "start": "nodemon --watch src scripts/bot.js && src scripts/musicShare.js"
+    "start": "nodemon --watch src scripts/bot.js"
   },
   "author": "doandroidsdreamof",
   "license": "ISC",
@@ -14,6 +14,9 @@
     "node-telegram-bot-api": "^0.58.0",
     "nodemon": "^2.0.19"
   },
+  "keywords": [
+    "heroku"
+  ],
   "devDependencies": {
     "concurrently": "^7.3.0"
   }
