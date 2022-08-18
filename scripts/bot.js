@@ -7,6 +7,7 @@ require('dotenv').config();
 const express = require("express");
 
 const aws = require('aws-sdk');
+const env = process.env.NODE_ENV || 'development';
 
 let s3 = new aws.S3({
   BOTKEY: process.env.BOT_KEY,
@@ -15,7 +16,6 @@ let s3 = new aws.S3({
 });
 
 
-const env = process.env.NODE_ENV || 'development';
 
 
 
