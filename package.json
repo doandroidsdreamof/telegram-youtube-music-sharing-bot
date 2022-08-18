@@ -2,19 +2,18 @@
   "name": "telegram-bot",
   "version": "1.0.0",
   "description": "Telegram bot with Youtube data API",
-  "main": "web.js",
+  "main": "bot.js",
   "scripts": {
     "test": "test",
-    "start": "node scripts/web.js"
+    "start": "node scripts/bot.js"
   },
   "author": "doandroidsdreamof",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "node-fetch": "^3.2.10",
+    "node-fetch": "^2.6.4",
     "node-telegram-bot-api": "^0.58.0"
-
   },
   "engines": {
     "node": "v16.16.0"
@@ -22,5 +21,4 @@
   "keywords": [
     "heroku"
   ]
-
 }
