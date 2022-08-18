@@ -5,7 +5,7 @@
   "main": "bot.js",
   "scripts": {
     "test": "test",
-    "start": "node scripts/index.js"
+    "start": "node scripts/web.js"
   },
   "author": "doandroidsdreamof",
   "license": "ISC",
