@@ -9,8 +9,8 @@ const env = process.env.NODE_ENV || 'development';
 
 
 // Your screet API keys.
-const YOUTUBEKEY = process.env.YOUTUBE_KEY;
-const BOTKEY = process.env.BOT_KEY;
+const YOUTUBEKEY = 'AIzaSyCmrWhv4bz_jJPeoM_Cec_gq77D6z5fZ8c';
+const BOTKEY = '5338914098:AAFskVd_pnMN1cpMvfKX78MoZ9ZCaFvXpJY'
 
 
 const bot = new TelegramBot(BOTKEY, { polling: true });
@@ -18,7 +18,7 @@ const bot = new TelegramBot(BOTKEY, { polling: true });
 
 
 bot.on('message', (msg) => {
-  /*
+  /* for test in this way we can check message input from users.
     const chatId = msg.chat.id;
     const message = msg.text.trim().toLowerCase();
     console.log("here =>", JSON.stringify(msg))*/
