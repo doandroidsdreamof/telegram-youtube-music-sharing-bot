@@ -3,7 +3,7 @@ var packageInfo = require('./package.json');
 
 var app = express();
 
-
+let port = process.env.PORT || 8080
 app.get('/', function (req, res) {
   res.json({ version: packageInfo.version });
 });
