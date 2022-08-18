@@ -5,7 +5,11 @@
   "main": "bot.js",
   "scripts": {
     "test": "test",
+<<<<<<< HEAD
     "start": "node scripts/bot.js"
+=======
+    "start": "nodemon --watch src scripts/bot.js"
+>>>>>>> 0e94f1331d89a3a2dbfec31e453a45d0377d8adc
   },
   "author": "doandroidsdreamof",
   "license": "ISC",

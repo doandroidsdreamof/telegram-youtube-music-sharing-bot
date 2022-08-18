@@ -13,8 +13,13 @@ const env = process.env.NODE_ENV || 'development';
 
 
 // Your screet API keys.
+<<<<<<< HEAD
 const YOUTUBEKEY = process.env.YOUTUBE_KEY;
 const BOTKEY = process.env.BOT_KEY;
+=======
+const YOUTUBE_KEY = process.env.YOUTUBEKEY;
+const BOT_KEY = process.env.BOTKEY;
+>>>>>>> 0e94f1331d89a3a2dbfec31e453a45d0377d8adc
 
 console.log(YOUTUBEKEY)
 const bot = new TelegramBot(BOTKEY, { polling: true });
@@ -35,12 +40,13 @@ bot.on('polling_error', (error) => {
 });
 
 
-// this way we can assign bot command
+// we can assign to bot command
 bot.onText(/\/start/, (msg) => {
   bot.sendMessage(msg.chat.id, "Hi there! " + msg.from.first_name);
 });
 
 const pullData = async () => {
+  // change here which channel you want to use.
   const channelId = 'UU7eKF0lPY8LNwfczq9UFlxg';
   try {
     //Youtube 
