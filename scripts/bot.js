@@ -7,19 +7,18 @@ require('dotenv').config();
 const express = require("express");
 
 const aws = require('aws-sdk');
+
+
+
 const env = process.env.NODE_ENV || 'development';
 
-let s3 = new aws.S3({
-  BOTKEY: process.env.BOT_KEY,
-  YOUTUBEKEY: process.env.YOUTUBE_KEY
 
-});
-
+// Your screet API keys.
+const YOUTUBEKEY = proces.env.YOUTUBE_KEY;
+const BOTKEY = proces.env.BOT_KEY;
 
 
-
-
-const bot = new TelegramBot(s3.BOTKEY, { polling: true });
+const bot = new TelegramBot(BOTKEY, { polling: true });
 
 
 
@@ -46,7 +45,7 @@ const pullData = async () => {
   const channelId = 'UU7eKF0lPY8LNwfczq9UFlxg';
   try {
     //Youtube 
-    const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${channelId}&maxResults=50&key=${s3.YOUTUBEKEY}`);
+    const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${channelId}&maxResults=50&key=${YOUTUBEKEY}`);
     const lastUploads = await response.json();
     shareMusic(lastUploads)
 
