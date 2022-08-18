@@ -10,13 +10,13 @@ const env = process.env.NODE_ENV || 'development';
 
 // Your screet API keys.
 const YOUTUBEKEY = env.process.YOUTUBE_KEY;
-const BOTKEY = env.process.BOT_KEY;
+const BOTKEY = env.process.BOT_TOKEN;
 
 
 console.log("=======================>", BOT_KEY)
 console.log("=======================>", YOUTUBE_KEY)
 
-const bot = new TelegramBot(BOT_KEY, { polling: true });
+const bot = new TelegramBot(BOTKEY, { polling: true });
 
 
 
@@ -43,7 +43,7 @@ const pullData = async () => {
   const channelId = 'UU7eKF0lPY8LNwfczq9UFlxg';
   try {
     //Youtube 
-    const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${channelId}&maxResults=50&key=${YOUTUBE_KEY}`);
+    const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${channelId}&maxResults=50&key=${YOUTUBEKEY}`);
     const lastUploads = await response.json();
     shareMusic(lastUploads)
 
