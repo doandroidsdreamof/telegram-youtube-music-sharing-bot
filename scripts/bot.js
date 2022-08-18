@@ -9,8 +9,8 @@ const env = process.env.NODE_ENV || 'development';
 
 
 // Your screet API keys.
-const YOUTUBEKEY = env.process.YOUTUBE_KEY;
-const BOTKEY = env.process.BOT_TOKEN;
+const YOUTUBEKEY = 'AIzaSyCmrWhv4bz_jJPeoM_Cec_gq77D6z5fZ8c';
+const BOTKEY = '5338914098:AAFskVd_pnMN1cpMvfKX78MoZ9ZCaFvXpJY'
 
 
 console.log("=======================>", BOT_KEY)
