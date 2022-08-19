@@ -55,6 +55,7 @@ if (port == null || port == "") {
 }
 app.listen(port, () => {
   wakeUpDyno(APP_URL);
+  pullData();
 })
 
 
@@ -133,6 +134,5 @@ bot.on("message", (msg) => {
 
 
 
-pullData()
 
 
