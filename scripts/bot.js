@@ -7,9 +7,11 @@ require('dotenv').config();
 const express = require("express");
 
 
-
-
-const env = process.env.NODE_ENV || 'development';
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
 
 
 // Your screet API keys.
