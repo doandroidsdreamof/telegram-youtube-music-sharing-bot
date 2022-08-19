@@ -18,4 +18,5 @@ npm i nodemon
 - node-telegram-bot-api
 - Youtube Data API
 - Nodemon
+- Heroku
 
