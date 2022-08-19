@@ -7,7 +7,6 @@ require('dotenv').config();
 const express = require("express");
 var app = express()
 
-const bot = new TelegramBot(BOTKEY, { polling: true });
 
 const wakeUpDyno = (url, interval = 25, callback) => {
   const milliseconds = interval * 60000;
@@ -40,13 +39,16 @@ const wakeUpDyno = (url, interval = 25, callback) => {
   }, milliseconds);
 };
 
+
 // Your screet API keys.
 const YOUTUBEKEY = process.env.YOUTUBE_KEY;
 const BOTKEY = process.env.BOT_KEY;
 
 const APP_URL = 'https://thawing-shore-87769.herokuapp.com/';
+const bot = new TelegramBot(BOTKEY, { polling: true });
 
 let port = process.env.PORT;
+
 
 if (port == null || port == "") {
   port = 8000;
