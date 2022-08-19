@@ -59,18 +59,6 @@ app.listen(port, () => {
 
 
 
-
-
-
-bot.on('message', (msg) => {
-  // for test in this way we can check message input from users.
-    const chatId = msg.chat.id;
-    const message = msg.text.trim().toLowerCase();
-    console.log("here =>", JSON.stringify(msg))
-}
-);
-
-
 bot.on('polling_error', (error) => {
   console.log("error for bot.js => ", error.code);  // => 'EFATAL'
 });
