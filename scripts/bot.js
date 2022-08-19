@@ -12,29 +12,29 @@ const wakeUpDyno = (url, interval = 25, callback) => {
   const milliseconds = interval * 60000;
   setTimeout(() => {
 
-      try { 
-          console.log(`==========>  setTimeout called.`);
-          bot.onText("message", (msg) => {
-          });
-          fetch(url).then(() => console.log(`Fetching ${url}.`)); 
-      }
-      catch (err) { 
-          console.log(`Error fetching ${url}: ${err.message} 
+    try {
+      console.log(`==========>  setTimeout called.`);
+      bot.onText("message", (msg) => {
+      });
+      fetch(url).then(() => console.log(`Fetching ${url}.`));
+    }
+    catch (err) {
+      console.log(`Error fetching ${url}: ${err.message} 
           Will try again in ${interval} minutes...`);
+    }
+    finally {
+
+      try {
+        callback();
+      }
+      catch (e) {
+        callback ? console.log("Callback failed: ", e.message) : null;
       }
       finally {
-
-          try {
-              callback(); 
-          }
-          catch (e) { 
-              callback ? console.log("Callback failed: ", e.message) : null;
-          }
-          finally {
-              return wakeUpDyno(url, interval, callback);
-          }
-          
+        return wakeUpDyno(url, interval, callback);
       }
+
+    }
 
   }, milliseconds);
 };
@@ -56,7 +56,7 @@ if (port == null || port == "") {
 app.listen(port, () => {
   wakeUpDyno(APP_URL);
   pullData();
-  console.log(deneme(0))
+  shareMusic()
 })
 
 
@@ -110,6 +110,9 @@ const shareMusic = async (data) => {
       case "bir önceki albüm":
         bot.sendMessage(chatId, `https://www.youtube.com/watch?v=${videoId.splice(0, 1)}`)
         break;
+      case "x":
+        console.log("burası ====>", deneme(0))
+        break;
     }
   });
 
@@ -136,6 +139,6 @@ bot.on("message", (msg) => {
 
 
 
-function deneme(x){
+function deneme(x) {
   return x + 1;
 }
