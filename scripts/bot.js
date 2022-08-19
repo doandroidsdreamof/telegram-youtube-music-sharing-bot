@@ -5,8 +5,9 @@ const TelegramBot = require('node-telegram-bot-api');
 const { url } = require('inspector');
 require('dotenv').config();
 const express = require("express");
+const wakeUpDyno = require("wakeUpDyno.js");
 var app = express()
-const wakeUpDyno = require("wakeDyno.js");
+
 
 
 // Your screet API keys.
@@ -21,7 +22,7 @@ if (port == null || port == "") {
   port = 8000;
 }
 app.listen(port, () => {
-  wakeUpDyno(APP_URL); // will start once server starts
+  wakeUpDyno(APP_URL);
 })
 
 
