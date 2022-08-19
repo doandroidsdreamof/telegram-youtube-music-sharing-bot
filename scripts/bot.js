@@ -5,7 +5,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const { url } = require('inspector');
 require('dotenv').config();
 const express = require("express");
-const wakeUp = require("wakeUpDyno.js");
+const wakeUp = require("wake.js");
 var app = express()
 
 
