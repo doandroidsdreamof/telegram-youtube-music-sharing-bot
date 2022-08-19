@@ -5,7 +5,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const { url } = require('inspector');
 require('dotenv').config();
 const express = require("express");
-const wakeUp = require("wake.js");
+const wake = require("wake");
 var app = express()
 
 
@@ -21,7 +21,7 @@ if (port == null || port == "") {
   port = 8000;
 }
 app.listen(port, () => {
-  wakeUp(APP_URL);
+  wakeUpDyno(APP_URL);
 })
 
 
