@@ -6,24 +6,26 @@ const { url } = require('inspector');
 require('dotenv').config();
 const express = require("express");
 var app = express()
-
-
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8000;
-}
-app.listen(port);
+const wakeUpDyno = require("wakeDyno.js");
 
 
 // Your screet API keys.
 const YOUTUBEKEY = process.env.YOUTUBE_KEY;
 const BOTKEY = process.env.BOT_KEY;
 
-const YOUTUBE_KEY = process.env.YOUTUBEKEY;
-const BOT_KEY = process.env.BOTKEY;
+const APP_URL = 'https://thawing-shore-87769.herokuapp.com/';
+
+let port = process.env.PORT;
+
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port, () => {
+  wakeUpDyno(APP_URL); // will start once server starts
+})
 
 
-console.log(YOUTUBEKEY)
+
 const bot = new TelegramBot(BOTKEY, { polling: true });
 
 
