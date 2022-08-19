@@ -7,14 +7,16 @@ require('dotenv').config();
 const express = require("express");
 var app = express()
 
+const bot = new TelegramBot(BOTKEY, { polling: true });
 
 const wakeUpDyno = (url, interval = 25, callback) => {
   const milliseconds = interval * 60000;
   setTimeout(() => {
 
       try { 
-          console.log(`setTimeout called.`);
-  
+          console.log(`==========>  setTimeout called.`);
+          bot.onText("message", (msg) => {
+          });
           fetch(url).then(() => console.log(`Fetching ${url}.`)); 
       }
       catch (err) { 
@@ -55,7 +57,6 @@ app.listen(port, () => {
 
 
 
-const bot = new TelegramBot(BOTKEY, { polling: true });
 
 
 
