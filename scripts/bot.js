@@ -5,9 +5,38 @@ const TelegramBot = require('node-telegram-bot-api');
 const { url } = require('inspector');
 require('dotenv').config();
 const express = require("express");
-const wake = require("wake");
 var app = express()
 
+
+const wakeUpDyno = (url, interval = 25, callback) => {
+  const milliseconds = interval * 60000;
+  setTimeout(() => {
+
+      try { 
+          console.log(`setTimeout called.`);
+  
+          fetch(url).then(() => console.log(`Fetching ${url}.`)); 
+      }
+      catch (err) { 
+          console.log(`Error fetching ${url}: ${err.message} 
+          Will try again in ${interval} minutes...`);
+      }
+      finally {
+
+          try {
+              callback(); 
+          }
+          catch (e) { 
+              callback ? console.log("Callback failed: ", e.message) : null;
+          }
+          finally {
+              return wakeUpDyno(url, interval, callback);
+          }
+          
+      }
+
+  }, milliseconds);
+};
 
 // Your screet API keys.
 const YOUTUBEKEY = process.env.YOUTUBE_KEY;
