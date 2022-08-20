@@ -49,9 +49,6 @@ const bot = new TelegramBot(BOTKEY, { polling: true });
 
 let port = process.env.PORT;
 
-function sum(){
-  return x + 1;
-}
 
 if (port == null || port == "") {
   port = 8000;
@@ -59,19 +56,7 @@ if (port == null || port == "") {
 app.listen(port, () => {
   wakeUpDyno(APP_URL);
   pullData();
-  shareMusic()
-  bot.on("message", (msg) => {
-    const chatId = msg.chat.id;
-    const message = msg.text.trim().toLowerCase();
-    switch (message) {
-      case "x":
-        console.log(sum(1))
-        break;
-    
-    }
-  
-  
-  })
+
 })
 
 
@@ -151,7 +136,3 @@ bot.on("message", (msg) => {
 
 
 
-
-function deneme(x) {
-  return x + 1;
-}
