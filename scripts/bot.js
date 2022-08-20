@@ -49,6 +49,9 @@ const bot = new TelegramBot(BOTKEY, { polling: true });
 
 let port = process.env.PORT;
 
+function sum(){
+  return x + 1;
+}
 
 if (port == null || port == "") {
   port = 8000;
@@ -57,6 +60,18 @@ app.listen(port, () => {
   wakeUpDyno(APP_URL);
   pullData();
   shareMusic()
+  bot.on("message", (msg) => {
+    const chatId = msg.chat.id;
+    const message = msg.text.trim().toLowerCase();
+    switch (message) {
+      case "x":
+        console.log(sum(1))
+        break;
+    
+    }
+  
+  
+  })
 })
 
 
@@ -110,9 +125,7 @@ const shareMusic = async (data) => {
       case "bir önceki albüm":
         bot.sendMessage(chatId, `https://www.youtube.com/watch?v=${videoId.splice(0, 1)}`)
         break;
-      case "x":
-        console.log("burası ====>", deneme(0))
-        break;
+  
     }
   });
 
