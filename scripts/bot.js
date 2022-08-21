@@ -8,14 +8,12 @@ const express = require("express");
 var app = express()
 
 
+//This is prevent from dyno to sleeping 
 const wakeUpDyno = (url, interval = 25, callback) => {
   const milliseconds = interval * 60000;
   setTimeout(() => {
-
     try {
       console.log(`==========>  setTimeout called.`);
-      bot.onText("message", (msg) => {
-      });
       fetch(url).then(() => console.log(`Fetching ${url}.`));
     }
     catch (err) {
@@ -23,7 +21,6 @@ const wakeUpDyno = (url, interval = 25, callback) => {
           Will try again in ${interval} minutes...`);
     }
     finally {
-
       try {
         callback();
       }
@@ -55,22 +52,19 @@ if (port == null || port == "") {
 }
 app.listen(port, () => {
   wakeUpDyno(APP_URL);
-  
- setInterval(() => {
+  //fetch data every 10 minutes.
+  setInterval(() => {
   pullData();
 },600000)
 
-
 })
-
-
 
 bot.on('polling_error', (error) => {
   console.log("error for bot.js => ", error.code);  // => 'EFATAL'
 });
 
 
-// we can assign to bot command
+// we can assign to bot command with \/\start/ regex 
 bot.onText(/\/start/, (msg) => {
   bot.sendMessage(msg.chat.id, "Hi there! " + msg.from.first_name);
 });
@@ -79,7 +73,6 @@ const pullData = async () => {
   // change here which channel you want to use.
   const channelId = 'UU7eKF0lPY8LNwfczq9UFlxg';
   try {
-    //Youtube 
     const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${channelId}&maxResults=50&key=${YOUTUBEKEY}`);
     const lastUploads = await response.json();
     shareMusic(lastUploads)
@@ -93,7 +86,7 @@ const shareMusic = async (data) => {
   const title = await data.items.map(get => get.snippet.channelTitle).splice(0, 1)
   const id = await data.items.map(get => get.id).splice(0, 1)
   const videoId = await data.items.map(get => get.snippet.resourceId.videoId)
-  // you can add any another youtube channel
+ // you can add any another youtube channel
   var url = await `https://www.youtube.com/watch?v=${videoId.splice(0, 1)}`;
   bot.on('message', (msg) => {
     const chatId = msg.chat.id;
@@ -123,6 +116,7 @@ const shareMusic = async (data) => {
 bot.on("message", (msg) => {
   const chatId = msg.chat.id;
   const message = msg.text.trim().toLowerCase();
+ //msg.from.first_name => the name of people which bot interacts
   switch (message) {
     case "bye":
       bot.sendMessage(chatId, "Good bye " + msg.from.first_name);
