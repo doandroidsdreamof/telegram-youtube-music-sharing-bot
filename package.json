@@ -1,7 +1,7 @@
 {
   "name": "telegram-bot",
   "version": "1.0.0",
-  "description": "Telegram bot with Youtube data API",
+  "description": "It shares last music or video from any Youtube channel",
   "main": "bot.js",
   "scripts": {
     "test": "test",
@@ -12,7 +12,6 @@
   "dependencies": {
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "micro-bot": "^2.5.3",
     "node-fetch": "^2.6.4",
     "node-telegram-bot-api": "^0.58.0",
     "uuid": "^8.3.2"
