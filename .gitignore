@@ -1,6 +1,6 @@
 .env
 .image
-.node_modules
-.mesaj takip.txt
+node_modules
+mesaj takip
 .Procfile
 .gitignore
