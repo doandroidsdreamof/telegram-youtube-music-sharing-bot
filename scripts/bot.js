@@ -53,9 +53,7 @@ if (port == null || port == "") {
 app.listen(port, () => {
   wakeUpDyno(APP_URL);
   //fetch data every 10 minutes.
-  setInterval(() => {
   pullData();
-},600000)
 
 })
 
@@ -69,17 +67,14 @@ bot.onText(/\/start/, (msg) => {
   bot.sendMessage(msg.chat.id, "Hi there! " + msg.from.first_name);
 });
 
-const pullData = async () => {
+const pullData =  () => {
   // change here which channel you want to use.
   const channelId = 'UU7eKF0lPY8LNwfczq9UFlxg';
-  try {
-    const response = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${channelId}&maxResults=50&key=${YOUTUBEKEY}`);
-    const lastUploads = await response.json();
+    const response =  fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${channelId}&maxResults=50&key=${YOUTUBEKEY}`);
+    const lastUploads =  response.json();
     shareMusic(lastUploads)
 
-  } catch (err) {
-    console.error(err);
-  }
+
 
 }
 const shareMusic = async (data) => {
