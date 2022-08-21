@@ -55,7 +55,11 @@ if (port == null || port == "") {
 }
 app.listen(port, () => {
   wakeUpDyno(APP_URL);
+  
+ setInterval(() => {
   pullData();
+},600000)
+
 
 })
 
